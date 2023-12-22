@@ -7,7 +7,11 @@ const HomeContent = () => {
       <section>
         <div
           className="d-flex flex-column justify-content-center align-items-center title-header"
-          style={{ height: "100vh", color: "white" }}
+          style={{
+            height: "100vh",
+            color: "white",
+            backgroundImage: "url(assets/img/banner.jpg)",
+          }}
         >
           <h1 style={{ fontSize: "50px" }}>IDEAS</h1>
           <p style={{ fontSize: "20px" }}>Where all our great things begin</p>
