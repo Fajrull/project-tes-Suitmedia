@@ -37,13 +37,6 @@ nav {
   padding-bottom: 5px;
 }
 
-section {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-
 .title-header {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;

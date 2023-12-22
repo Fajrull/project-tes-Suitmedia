@@ -11,6 +11,10 @@ const HomeContent = () => {
             height: "100vh",
             color: "white",
             backgroundImage: "url(assets/img/banner.jpg)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
           }}
         >
           <h1 style={{ fontSize: "50px" }}>IDEAS</h1>
