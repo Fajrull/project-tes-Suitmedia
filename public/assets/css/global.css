@@ -37,13 +37,9 @@ nav {
   padding-bottom: 5px;
 }
 
-.title-header {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-}
-
 main {
   margin-top: 50px;
+  height: auto;
 }
 
 main select {
@@ -51,4 +47,10 @@ main select {
   height: 30px;
   border-radius: 99px;
   text-align: center;
+}
+
+@media (max-width: 468px) {
+  .title {
+    gap: 8px !important;
+  }
 }
