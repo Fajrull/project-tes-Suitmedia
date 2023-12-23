@@ -76,22 +76,23 @@ const HomeContent = () => {
   const extractImageAndText = (htmlContent) => {
     const doc = new DOMParser().parseFromString(htmlContent, "text/html");
     const imgElement = doc.querySelector("img");
-    const paragraphElement = doc.querySelector("p");
 
     let imageSrc = null;
-    let textSnippet = null;
 
     if (imgElement) {
       imageSrc = imgElement.src;
     }
 
-    if (paragraphElement) {
-      const words = paragraphElement.textContent.split(" ");
-      textSnippet = words.slice(0, 6).join(" ");
-    }
-
-    return { imageSrc, textSnippet };
+    return { imageSrc };
   };
+
+  const formatDate = (isoString) => {
+    const date = new Date(isoString);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  const MAX_TITLE_LENGTH = 50;
 
   return (
     <>
@@ -126,9 +127,12 @@ const HomeContent = () => {
           </div>
           <div className="d-flex flex-wrap justify-content-between gap-3 ">
             {currentItems.map((item) => {
-              const { imageSrc, textSnippet } = extractImageAndText(
-                item.content
-              );
+              const { imageSrc } = extractImageAndText(item.content);
+
+              const truncatedTitle =
+                item.title.length > MAX_TITLE_LENGTH
+                  ? item.title.substring(0, MAX_TITLE_LENGTH) + "..."
+                  : item.title;
 
               return (
                 <div
@@ -142,11 +146,10 @@ const HomeContent = () => {
 
                   <div className="card-body">
                     <h6 className="card-subtitle mb-2 text-body-secondary">
-                      {item.created_at}
+                      {formatDate(item.created_at)}
                     </h6>
-                    {textSnippet && (
-                      <h3 className="card-text">{textSnippet}</h3>
-                    )}
+
+                    <h3 className="card-text">{truncatedTitle}</h3>
                   </div>
                 </div>
               );
