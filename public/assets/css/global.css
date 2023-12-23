@@ -49,6 +49,10 @@ main select {
   text-align: center;
 }
 
+.MuiPagination-root {
+  background-color: #fff;
+}
+
 @media (max-width: 468px) {
   .title {
     gap: 8px !important;

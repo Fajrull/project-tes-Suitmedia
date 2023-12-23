@@ -141,7 +141,12 @@ const HomeContent = () => {
                   style={{ width: "300px" }}
                 >
                   {imageSrc && (
-                    <img src={imageSrc} className="card-img-top" alt="..." />
+                    <img
+                      src={imageSrc}
+                      className="card-img-top"
+                      alt="img"
+                      style={{ height: "200px" }}
+                    />
                   )}
 
                   <div className="card-body">
